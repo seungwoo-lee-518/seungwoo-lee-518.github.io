@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Boring man&#39;s Blog</title>
-    <link>http://seungwoo-lee-518-at-proton-me.github.io/</link>
-    <description>Recent content on Boring man&#39;s Blog</description>
+    <title>Posts on Boring man&#39;s Blog</title>
+    <link>http://seungwoo-lee-518-at-proton-me.github.io/posts/</link>
+    <description>Recent content in Posts on Boring man&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 10 Dec 2022 19:59:46 +0900</lastBuildDate><atom:link href="http://seungwoo-lee-518-at-proton-me.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Dec 2022 19:59:46 +0900</lastBuildDate><atom:link href="http://seungwoo-lee-518-at-proton-me.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>블로그가 생겼다!</title>
       <link>http://seungwoo-lee-518-at-proton-me.github.io/posts/my-first-post/</link>
