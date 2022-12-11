@@ -2,13 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://seungwoo-lee-518-at-proton-me.github.io/my-first-post/</loc>
-    <lastmod>2022-12-10T19:59:46+09:00</lastmod>
+    <loc>http://seungwoo-lee-518-at-proton-me.github.io/blog/my-new-post/</loc>
+    <lastmod>2022-12-11T17:06:45+09:00</lastmod>
+  </url><url>
+    <loc>http://seungwoo-lee-518-at-proton-me.github.io/tags/blogging/</loc>
+    <lastmod>2022-12-11T17:06:45+09:00</lastmod>
+  </url><url>
+    <loc>http://seungwoo-lee-518-at-proton-me.github.io/blog/</loc>
+    <lastmod>2022-12-11T17:06:45+09:00</lastmod>
   </url><url>
     <loc>http://seungwoo-lee-518-at-proton-me.github.io/</loc>
-  </url><url>
-    <loc>http://seungwoo-lee-518-at-proton-me.github.io/categories/</loc>
+    <lastmod>2022-12-11T17:06:45+09:00</lastmod>
   </url><url>
     <loc>http://seungwoo-lee-518-at-proton-me.github.io/tags/</loc>
+    <lastmod>2022-12-11T17:06:45+09:00</lastmod>
+  </url><url>
+    <loc>http://seungwoo-lee-518-at-proton-me.github.io/categories/</loc>
   </url>
 </urlset>
