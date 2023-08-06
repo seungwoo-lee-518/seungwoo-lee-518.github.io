@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 삽질로그</title>
+    <link>https://seungwoo-lee-518-at-proton-me.github.io/posts/</link>
+    <description>Recent content in Posts on 삽질로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 06 Aug 2023 18:02:09 +0900</lastBuildDate><atom:link href="https://seungwoo-lee-518-at-proton-me.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1개월간의 NixOS 사용후기</title>
+      <link>https://seungwoo-lee-518-at-proton-me.github.io/posts/nix-os-1mnth/</link>
+      <pubDate>Sun, 06 Aug 2023 18:02:09 +0900</pubDate>
+      
+      <guid>https://seungwoo-lee-518-at-proton-me.github.io/posts/nix-os-1mnth/</guid>
+      <description>삽질 기록 Arch Linux 해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도 오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우 매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.
+그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와 환경설정을 dotfiles Github 레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는 있는 환경이 되었다.</description>
+    </item>
+    
+  </channel>
+</rss>
