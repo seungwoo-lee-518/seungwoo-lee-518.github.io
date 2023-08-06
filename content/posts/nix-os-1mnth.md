@@ -1,5 +1,6 @@
 ---
 title: "1개월간의 NixOS 사용후기"
+slug: nix-os-1mnth
 date: 2023-08-06T18:02:09+09:00
 draft: false
 ---
