@@ -1,1 +1,4 @@
 theme = 'hugo-bearblog'
+baseURL = 'https://seungwoo-lee-518-at-proton-me.github.io/'
+languageCode = 'ko-KR'
+title = '삽질로그'
