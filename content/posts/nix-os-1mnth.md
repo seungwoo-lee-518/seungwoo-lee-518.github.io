@@ -1,7 +1,7 @@
 ---
 title: "1개월간의 NixOS 사용후기"
 date: 2023-08-06T18:02:09+09:00
-draft: true
+draft: false
 ---
 
 # 삽질 기록
