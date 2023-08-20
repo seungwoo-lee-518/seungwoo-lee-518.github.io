@@ -15,6 +15,10 @@ to serve a containerized environment for Machine Learning Researchers.
 
 * [Zeroone. AI.](https://zeroone.ai): 2019. 10 ~ current
 
+## Contact
+
+* [seungwoo.lee.518@proton.me](mailto:seungwoo.lee.518@proton.me)
+
 ## Notice about posts
 
 It's bit hard to write using English for me. But I'll keep trying to write
