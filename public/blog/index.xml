@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>삽질로그</title>
-    <link>https://seungwoo-lee-518-at-proton-me.github.io/</link>
-    <description>Recent content on 삽질로그</description>
+    <title>Blogs on 삽질로그</title>
+    <link>https://seungwoo-lee-518-at-proton-me.github.io/blog/</link>
+    <description>Recent content in Blogs on 삽질로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
     <copyright>Copyright © 2023, Seungwoo Lee.</copyright>
-    <lastBuildDate>Sun, 06 Aug 2023 18:02:09 +0900</lastBuildDate><atom:link href="https://seungwoo-lee-518-at-proton-me.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Aug 2023 18:02:09 +0900</lastBuildDate><atom:link href="https://seungwoo-lee-518-at-proton-me.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1개월간의 NixOS 사용후기</title>
       <link>https://seungwoo-lee-518-at-proton-me.github.io/nix-os-1mnth/</link>

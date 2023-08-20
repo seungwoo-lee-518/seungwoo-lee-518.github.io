@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1개월간의 NixOS 사용후기 | 삽질로그</title>
+<meta name="title" content="1개월간의 NixOS 사용후기" />
+<meta name="description" content="삽질 기록 Arch Linux 해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도 오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우 매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.
+그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와 환경설정을 dotfiles Github 레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는 있는 환경이 되었다." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="1개월간의 NixOS 사용후기" />
+<meta property="og:description" content="삽질 기록 Arch Linux 해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도 오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우 매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.
+그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와 환경설정을 dotfiles Github 레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는 있는 환경이 되었다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://seungwoo-lee-518-at-proton-me.github.io/nix-os-1mnth/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-08-06T18:02:09+09:00" />
+<meta property="article:modified_time" content="2023-08-06T18:02:09+09:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1개월간의 NixOS 사용후기"/>
+<meta name="twitter:description" content="삽질 기록 Arch Linux 해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도 오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우 매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.
+그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와 환경설정을 dotfiles Github 레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는 있는 환경이 되었다."/>
+
+
+
+<meta itemprop="name" content="1개월간의 NixOS 사용후기">
+<meta itemprop="description" content="삽질 기록 Arch Linux 해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도 오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우 매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.
+그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와 환경설정을 dotfiles Github 레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는 있는 환경이 되었다."><meta itemprop="datePublished" content="2023-08-06T18:02:09+09:00" />
+<meta itemprop="dateModified" content="2023-08-06T18:02:09+09:00" />
+<meta itemprop="wordCount" content="498">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>삽질로그</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>1개월간의 NixOS 사용후기</h1>
+<p>
+  <i>
+    <time datetime='2023-08-06' pubdate>
+      06 Aug, 2023
+    </time>
+  </i>
+</p>
+
+<content>
+  <h1 id="삽질-기록">삽질 기록</h1>
+<h2 id="arch-linux">Arch Linux</h2>
+<p>해당 리눅스 배포판을 사용했던 이유는 없고, 이전에 사용해봤었던 리눅스 배포판 중 그래도
+오랬동안 사용했었던 배포판이라 사용했다. 그리고 인터넷 리소스들 중에 타일 기반의 윈도우
+매니저와 아치 리눅스를 같이 사용하는 경우가 많기도 했었던 게 한몫 했었던 것 같다.</p>
+<p>그 당시에는 그래도 이슈가 생기면 찾아볼 수 있는 시간이 있었으니까, 설치해야 하는 패키지와
+환경설정을 <a href="https://github.com/seungwoo-lee-518-at-proton-me/dotfiles">dotfiles</a> Github
+레파지토리를 통해서 관리했었고, 몇번의 시행착오를 겪었더니 파일은 많지만 그래도 사용할 수는
+있는 환경이 되었다.</p>
+<p>그리곤, 쓸만 해진 것 같아서 사용하던 M1 Macbook 과 Lenovo 노트북을 중고로 팔고, HP Elitebook
+으로 넘어갔다. M1 이 사용하긴 편했던 것 같지만, <code>x86_64</code> 환경과 더 멀어지게 되서, 사용할 때
+불편한 부분들이 많았기 때문에 처분을 결정했다.</p>
+<h2 id="windows-환경-하에서-wsl-을-사용">Windows 환경 하에서 WSL 을 사용</h2>
+<p>HP Elitebook 을 구매하고, 몇달 초반은 윈도우 환경 하에서 WSL (Windows Subsystem for Linux) 를
+설치해서 사용했다. 우분투 환경이였고, 이전에 사용했던 dotfiles 를 몇가지 수정해서 사용하는 방식으로
+큰 문제 없이 사용했던 것 같다.</p>
+<p>다만, 업그레이드 시 교체한 NVMe SSD 가 불량이여서 인식도 정상적으로 되지 않았던 것 같았고,
+WSL 에서 CPU 부하가 생기는 작업을 하는 경우, Tiger Lake 노트북의 한계 때문에 간간히 프리징이 발생했는데
+이게 참 여러모로 머리가 아팠다.</p>
+<p>WSL 환경에서 CPU, Memory 점유하는 갯수를 조절해서 사용해보거나, 여러 시도를 해봤는데 프리징이 생기면
+몇초간 노트북이 멈추는 현상을 계속 일으켰다. 중간중간에 <code>VM OS 설정이 문제인건가?</code> 싶어서 설정 변경하고
+테스트해보고 지웠다 깔았다 해보면서, 설치해야 하는 패키지 설정도 그에 따라 변경되어야 하는 부분이 참 불편
+했었다.</p>
+<p><code>그냥 밀고 Pop-OS 로 넘어가볼까</code> 라는 생각을 해보곤, 실제로 실행에 옮겨서 몇주정도 사용해보니 Gnome 의 깔끔한
+UX 외에는 크게 장점은 없었던 것 같고, 하드웨어 가속 등의 문제는 그대로 해결되지 않은 체로 남아있는 것 같아서
+다시 Windows 환경으로 돌아왔다.</p>
+<h3 id="home-manager-을-사용해보자">Home-Manager 을 사용해보자!</h3>
+<p>다시 윈도우 환경하의 WSL 환경으로 돌아와서, Ubuntu VM 위에 <a href="https://github.com/nix-community/home-manager">Home Manager</a>
+을 설치해서 사용해보기 시작했다. 우선 <a href="https://nixos.org/">NixOS</a> 홈페이지에 들어가서, Nix 를 설치한 뒤에
+<a href="https://github.com/nix-community/home-manager">Home Manager</a> 를 설치하면 설치는 끝나기 때문에 크게 어렵진 않다.</p>
+<p>이후 <a href="https://nix-community.github.io/home-manager/">Home Manager 공식문서</a> 를 참고하여 Nix Expression 을 작성한 뒤에
+<code>home-manager switch</code> 명령을 사용해서 환경을 바꿔주기만 하면 Configuration as Code 를 달성할 수 있다.</p>
+<p>여기에서 크게 만족을 했고, 앞에서 사용했던 패키지 설치 쉘 스크립트를 Home-Manager 의 설정 코드로 변경하기 시작했는데
+Host OS 가 Nix 가 아닌 다른 운영체제 (Ubuntu) 였다 보니, SystemD 등의 서비스 동작을 매끄럽게 할 수가 없다는 어려움이
+존재하긴 했던 것 같았다.</p>
+<h2 id="삽질의-끝">삽질의 끝</h2>
+<p>그동안 바빴던 일도 지나가고, 금오일 밤이 찾아왔는데, 뭘 할까 고민해보던 찰나에 윈도우를 NixOS 로 옮기는 작업을 진행할까?
+해서, 설치를 진행했다. Gnome 에디션을 설치해서, GUI 기반으로 설치를 지원하기 때문에 설치는 크게 어렵진 않았다.</p>
+<p>그리고, 이전에 Home Manager 에서 사용하던 <code>/etc/nixos/configuration.nix</code> 파일로 옮긴 다음, <code>nixos-rebuild switch</code> 명령어를
+통해서, 몇십분 만에 (물론 인터넷 속도가 빠른단 전재 하에) 마이그레이션까지 완료했고, 문서를 작성하는 현재까지 안정적으로
+사용하고 있다.</p>
+<p>이전에 했던 패키지 잘못 깔았을 때의 대처 방법이 뭘 들어내고 뭘 깔고 이게 아니라, 설정을 변경하거나, 재부팅을 해서 이전의 Generation
+으로 부팅해서 돌아간 뒤에 다시 빌드하는 방식이 좀 불편하긴 해도 설정을 코드의 형태로 관리할 수 있고, 버저닝이 된다는 부분이
+참 좋은 것 같다.</p>
+<p>추가적으로, 매뉴얼에서 몇줄 추가 만으로 다른 리눅스 배포판에서 했던 하드웨어 가속이 해결되서 속이 뻥 뚫린 것 같다.</p>
+<p>dotfiles 설정은 nix experssion 관련된 파일 몇가지와, Neovim 설정 외에는 모두 삭제했다.</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
