@@ -2,3 +2,14 @@ theme = 'hugo-bearblog'
 baseURL = 'https://seungwoo-lee-518-at-proton-me.github.io/'
 languageCode = 'ko-KR'
 title = '삽질로그'
+copyright = "Copyright © 2023, Seungwoo Lee."
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+[permalinks]
+  blog = "/:slug/"
+  tags = "/blog/:slug"
